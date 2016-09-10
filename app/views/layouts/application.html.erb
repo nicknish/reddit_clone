@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddit</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  
+    <header class="header clearfix">
+      <%= link_to 'reddit', root_path, class: 'logo' %>
+      <nav class="header-nav">
+        <% unless user_signed_in? %>
+          <%= link_to 'login', new_user_session_path %>
+        <% else %>
+          <%= link_to 'settings', edit_user_registration_path %>
+          <%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+        <% end %>
+      </nav>
+    </header>
+  
+    <% flash.each do |name, msg| %>
+      <div class="alert <%= "alert-#{name}" %>">
+        <%= msg %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

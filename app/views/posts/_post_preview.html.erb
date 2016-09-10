@@ -1,0 +1,18 @@
+<div class="post clearfix">
+  <div class="post-vote">
+    <%= link_to '⬆', like_post_path(post), method: :put, class: "post-vote-arrow #{post.vote_status(current_user) == 'upvoted' ? 'active' : ''}" %>
+    <div class="post-vote-num"><%= post.total_votes %></div>
+    <%= link_to '⬇', dislike_post_path(post), method: :put, class: "post-vote-arrow #{post.vote_status(current_user) == 'downvoted' ? 'active' : ''}" %>
+  </div>
+  <div class="post-info">
+    <%= link_to post.title, post.link_url.present? ? url_with_protocol(post.link_url) : post_path(post), class: 'post-title', target: '_blank' %>
+    <div class="post-submitted">Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></div>
+    <div class="post-actions clearfix">
+      <div class="post-action"><%= link_to "#{post.comments.count} comments", post_path(post) %></div>
+      <% if post.user == current_user %>
+        <div class="post-action"><%= link_to "Edit", edit_post_path(post) %></div>
+        <div class="post-action"><%= link_to "Delete", post, method: :delete, data: {confirm: 'Are you sure?'} %></div>
+      <% end %>
+    </div>
+  </div>
+</div>

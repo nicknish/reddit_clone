@@ -1,0 +1,15 @@
+<%= form_for @post do |f| %>
+  <div class="form-group">
+    <div><%= f.label :title %></div>
+    <div><%= f.text_field :title %></div>
+  </div>
+  <div class="form-group">
+    <div><%= f.label :link_url %></div>
+    <div><%= f.text_field :link_url %></div>
+  </div>
+  <div class="form-group">
+    <div><%= f.label :body %></div>
+    <div><%= f.text_area :body %></div>
+  </div>
+  <div><%= f.submit 'Save Post', class: 'btn' %></div>
+<% end %>

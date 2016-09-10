@@ -1,0 +1,6 @@
+<div class="wrapper-sm">
+  <%= link_to 'Create a post', new_post_path, class: 'btn btn-new-post' %>
+</div>
+<% @posts.each do |post| %>
+  <%= render 'post_preview', post: post %>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="post-comment-new">
+  <%= simple_form_for [@post, Comment.new] do |f| %>
+    <div class="form-group">
+      <div>New comment</div>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit 'Add Comment', class: 'btn' %>
+  <% end %>
+</div>

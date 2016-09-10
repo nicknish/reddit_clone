@@ -1,0 +1,64 @@
+.post {
+  display: table;
+  width: 100%;
+  padding: 15px 20px;
+}
+.post-vote {
+  display: table-cell;
+  position: relative;
+  width: 60px;
+}
+.post-vote-arrow {
+  position: absolute;
+  width: 100%;
+  margin-top: 3px;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  &:hover,
+  &.active {
+    color: white;
+  }
+  &:last-child {
+    top: 42px;
+  }
+}
+.post-vote-num {
+  position: absolute;
+  top: 23px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+.post-info {
+  display: table-cell;
+}
+.post-title {
+  display: inline-block;
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.post-submitted {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+.post-action {
+  float: left;
+  margin-right: 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.post-comment-new {
+  margin-bottom: 20px;
+}
+.post-body {
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.btn-new-post {
+  margin-top: 10px;
+}

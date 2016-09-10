@@ -1,0 +1,11 @@
+<%= render 'post_preview', post: @post %>
+<div class="wrapper-sm">
+  <div class="post-body">
+    <%= @post.body %>
+  </div>
+  <div class="post-comments">
+    <h4><%= @post.comments.count %> Comments</h4>
+    <%= render partial:'comments/new' %>
+    <%= render partial: @comments %>
+  </div>
+</div>
